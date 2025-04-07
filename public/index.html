@@ -7,15 +7,52 @@
     <title>Document</title>
   </head>
   <body class="bg-blue-950">
-     <div class="bg-blue-950 flex justify-center ">
-         <div id="left" class="w-[300px] h-[400px] m-6 border-2 border-dashed border-cyan-50">
-            <div class="list bg-pink-600 h-16 m-7 text-white text-xl flex items-center justify-center" draggable="true">BMW </div>
-            <div class="list bg-pink-600 h-16 m-7 text-white text-xl flex items-center justify-center" draggable="true">MERS</div>
-            <div class="list bg-pink-600 h-16 m-7 text-white text-xl flex items-center justify-center" draggable="true">BYD</div>
-            <div class="list bg-pink-600 h-16 m-7 text-white text-xl flex items-center justify-center" draggable="true">DAEWO</div>
-         </div>
-         <div id="right" class="w-[300px] h-[400px] m-6 border-2 border-dashed border-cyan-50"></div>
-     </div>  
+    <div class="bg-blue-950 flex justify-center">
+      <div
+        id="left"
+        class="w-[300px] h-[400px] m-6 border-2 border-dashed border-cyan-50"
+      >
+        <div
+          class="list bg-pink-600 h-16 m-7 text-white text-xl flex items-center justify-center"
+          draggable="true"
+        >
+          1
+        </div>
+        <div
+          class="list bg-pink-600 h-16 m-7 text-white text-xl flex items-center justify-center"
+          draggable="true"
+        >
+          2
+        </div>
+        <div
+          class="list bg-pink-600 h-16 m-7 text-white text-xl flex items-center justify-center"
+          draggable="true"
+        >
+          3
+        </div>
+        <div
+          class="list bg-pink-600 h-16 m-7 text-white text-xl flex items-center justify-center"
+          draggable="true"
+        >
+          4
+        </div>
+      </div>
+      <div
+        id="right"
+        class="w-[300px] h-[400px] m-6 border-2 border-dashed border-cyan-50"
+      ></div>
+    </div>
+
+    <div id="modal" class="hidden">
+      <div class="fixed inset-0 bg-gray-900/70 flex justify-center items-center">
+        <div class="w-[200px] h-[100px] bg-white text-center pt-2">
+          <p>Hello world</p>
+          <button id="close" class="w-[100px] h-[40px] bg-red-800 text-white mt-2">
+            back
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="../build/index.js"></script>
 </html>

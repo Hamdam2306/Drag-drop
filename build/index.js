@@ -2,17 +2,15 @@
 var lists = document.querySelectorAll(".list");
 var leftBox = document.getElementById("left");
 var rightBox = document.getElementById("right");
+var modal = document.getElementById("modal");
+var close = document.getElementById("close");
 
 // src/index.ts
 function setupDragDrop(sourceBox, targetBox) {
-  let selected = null;
+  let selected;
   lists.forEach((item) => {
     item.addEventListener("dragstart", (e) => {
       selected = e.target;
-      item.classList.add("dragging");
-    });
-    item.addEventListener("dragend", () => {
-      item.classList.remove("dragging");
     });
   });
   if (targetBox) {
@@ -37,3 +35,11 @@ function setupDragDrop(sourceBox, targetBox) {
   }
 }
 setupDragDrop(leftBox, rightBox);
+lists.forEach((lists2) => {
+  lists2.addEventListener("click", () => {
+    modal?.classList.remove("hidden");
+  });
+});
+close?.addEventListener("click", () => {
+  modal?.classList.add("hidden");
+});

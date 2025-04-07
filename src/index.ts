@@ -1,24 +1,15 @@
-import { lists,leftBox,rightBox } from "./elements"
+import { lists,leftBox,rightBox,close,modal } from "./elements"
 
 function setupDragDrop(sourceBox: HTMLElement | null, targetBox: HTMLElement | null) {
-    let selected: HTMLElement | null = null;
-
-    // 1. sourceBox ichidagi hozirgi .list elementlarini olish
-    
-    // const items = sourceBox?.querySelectorAll('.list') || [];
+    let selected: HTMLElement | null;
 
     lists.forEach(item => {
         item.addEventListener('dragstart', (e) => {
             selected = e.target as HTMLElement;
-            item.classList.add('dragging');
         });
 
-        item.addEventListener('dragend', () => {
-            item.classList.remove('dragging');
-        });
+        
     });
-
-    // 3. targetBox ga drop qilish imkoniyati
     if (targetBox) {
         targetBox.addEventListener('dragover', (e) => e.preventDefault());
         targetBox.addEventListener('drop', (e) => {
@@ -40,9 +31,18 @@ function setupDragDrop(sourceBox: HTMLElement | null, targetBox: HTMLElement | n
         } )
     }
 
-    
 }
+setupDragDrop(leftBox, rightBox);  
 
-// Dastlabki sozlash
-setupDragDrop(leftBox, rightBox);  // left → right
-// setupDragDrop(rightBox, leftBox);  // right → left
+
+lists.forEach(lists => {
+    lists.addEventListener('click', () => {
+       modal?.classList.remove('hidden')
+    })
+});
+
+close?.addEventListener('click', () => {
+    modal?.classList.add('hidden')
+})
+
+
